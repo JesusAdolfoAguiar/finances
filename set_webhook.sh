@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
 fi
 
 TOKEN=$1
-WEB_APP_URL="https://script.google.com/macros/s/AKfycbzeLT04hlBC3Ka6w09fN0dXhXRXGywm2cIIXE06dC0v-I5SWwZcfS2nGhRE0GiS179_DA/exec"
+WEB_APP_URL="https://script.google.com/macros/s/AKfycbxNEGK9F_qF5gm2Iz-YR1N4F99Wg9CqUg7xNBCGCr0epFnws4WE4O1QkERP8MTAv7_9uQ/exec"
 TELEGRAM_URL="https://api.telegram.org/bot${TOKEN}/setWebhook"
 
 echo "Setting webhook for bot..."
