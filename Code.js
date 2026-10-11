@@ -135,13 +135,20 @@ function setupFormulas() {
   const lastRow = overviewSheet.getLastRow();
   if (lastRow < 2) return;
 
-  // Apply SUMIFS to Column C (Oct Actual)
-  const actualRange = overviewSheet.getRange(2, 3, lastRow - 1, 1);
-  actualRange.setFormula('=SUMIFS(Transactions!$B:$B, Transactions!$C:$C, $A2, Transactions!$A:$A, ">="&C$1, Transactions!$A:$A, "<="&EOMONTH(C$1,0))');
-  
-  // Apply Variance to Column D (Oct Variance)
-  const varianceRange = overviewSheet.getRange(2, 4, lastRow - 1, 1);
-  varianceRange.setFormula('=$B2-C2');
+  const data = overviewSheet.getDataRange().getValues();
+  for (let i = 1; i < data.length; i++) {
+    const rowNum = i + 1;
+    const cat = String(data[i][0]).trim();
+    if (!cat) continue;
+
+    if (cat.toLowerCase() === 'total') {
+      overviewSheet.getRange(rowNum, 3).setFormula(`=SUM(C2:C${rowNum - 1})`);
+      overviewSheet.getRange(rowNum, 4).setFormula(`=$B${rowNum}-C${rowNum}`);
+    } else {
+      overviewSheet.getRange(rowNum, 3).setFormula(`=SUMIFS(Transactions!$B:$B, Transactions!$C:$C, $A${rowNum}, Transactions!$A:$A, ">="&C$1, Transactions!$A:$A, "<="&EOMONTH(C$1,0))`);
+      overviewSheet.getRange(rowNum, 4).setFormula(`=$B${rowNum}-C${rowNum}`);
+    }
+  }
 
   // Conditional Formatting for Column D
   const formatRange = overviewSheet.getRange("D2:D");
@@ -163,13 +170,28 @@ function setupFormulas() {
     .setRanges([formatRange])
     .build();
 
-  // We append to existing rules so we don't wipe out other formatting
-  const rules = overviewSheet.getConditionalFormatRules();
-  rules.push(ruleRed, ruleYellow, ruleGreen);
-  overviewSheet.setConditionalFormatRules(rules);
+  overviewSheet.clearConditionalFormatRules();
+  overviewSheet.setConditionalFormatRules([ruleRed, ruleYellow, ruleGreen]);
 }
 
 function doGet(e) {
+  if (e && e.parameter && e.parameter.action === 'dump') {
+    const ss = SpreadsheetApp.openById(SHEET_ID);
+    const transSheet = ss.getSheetByName("Transactions");
+    const overviewSheet = ss.getSheetByName("Monthly Overview");
+    const logSheet = ss.getSheetByName("Logs");
+    
+    const result = {
+      transactions: transSheet ? transSheet.getDataRange().getValues() : [],
+      overview: {
+        values: overviewSheet ? overviewSheet.getDataRange().getValues() : [],
+        formulas: overviewSheet ? overviewSheet.getDataRange().getFormulas() : []
+      },
+      logs: logSheet ? logSheet.getDataRange().getValues() : []
+    };
+    return ContentService.createTextOutput(JSON.stringify(result, null, 2)).setMimeType(ContentService.MimeType.JSON);
+  }
+
   if (e && e.parameter && e.parameter.action === 'setup') {
     setupFormulas();
     return HtmlService.createHtmlOutput("Formulas applied successfully.");
