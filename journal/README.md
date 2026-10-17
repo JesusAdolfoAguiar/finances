@@ -64,7 +64,7 @@ flowchart TD
 
 Your 39 categories from `Monthly Overview` are preserved intact so your Telegram bot (`Code.js`) continues to work without changes. They are grouped into **4 operational layers**:
 
-### Layer 1: Facebank Direct USD & Funnel Friction ($460/mo)
+### Layer 1: Facebank Direct USD & Funnel Friction ($405/mo)
 | Category (`Monthly Overview`) | Monthly $ | Eker Jar | Payment Rail & Rule |
 | :--- | ---: | :--- | :--- |
 | `Mesada mama` | $200 | GIVE | Facebank direct transfer |
@@ -75,18 +75,19 @@ Your 39 categories from `Monthly Overview` are preserved intact so your Telegram
 | `Subscripciones Spotify` | $8 | NEC | Facebank card (USD) |
 | `Subscripciones Facebank` | $6 | NEC | Facebank maintenance fee |
 | `Subscripciones Zinli` | $1 | NEC | Zinli maintenance fee |
-| `Fees` | $150 | NEC | COGS of `Facebank → Zinli → Binance` arbitrage funnel |
-| **Subtotal Layer 1** | **$460** | | **Stays in / spent from Facebank** |
+| `Fees` | $95 | NEC | COGS of `Facebank → Zinli → Binance` arbitrage funnel (~6.5% on bridged USD) |
+| **Subtotal Layer 1** | **$405** | | **Stays in / spent from Facebank** |
 
-### Layer 2: Interactive Brokers Fixed Transfers ($130/mo + Emergency Surplus)
+### Layer 2: Interactive Brokers Wealth & Safety ($263/mo)
 | Category (`Monthly Overview`) | Monthly $ | Eker Jar | Payment Rail & Rule |
 | :--- | ---: | :--- | :--- |
+| `Fondo de emergencia` | $133 | LTSS/Safety | ACH to IBKR → Cash/`SGOV` (adds to $400 base) |
 | `Inversion` | $100 | FFA | ACH to IBKR → Invested in long-term risk assets (never spent) |
 | `Medicinas Clobazam` | $30 | NEC (Sinking) | ACH to IBKR → Accumulates to **$360/yr** in Cash/`SGOV` for annual Peru Western Union purchase |
-| **Subtotal Layer 2 (Fixed)** | **$130** | | **Direct ACH `Facebank → IBKR` (saves ~6% bridge fee)** |
+| **Subtotal Layer 2** | **$263** | | **Direct ACH `Facebank → IBKR` (saves ~6% bridge fee)** |
 
-### Layer 3: True Monthly Local Living (`Binance Funding → Mercantil / Binance Pay`) ($900/mo)
-*Released in **4 weekly tranches of $212.50 USDT** from `Binance Earn` to `Binance Funding` (plus $50 `Terapia` via Binance Pay).*
+### Layer 3: True Monthly Local Living (`Binance Funding → Mercantil / Binance Pay`) ($915/mo)
+*Released in **4 weekly tranches of $216.25 USDT** from `Binance Earn` to `Binance Funding` (plus $50 `Terapia` via Binance Pay).*
 
 | Category (`Monthly Overview`) | Monthly $ | Weekly $ | Eker Jar | Payment Rail & Notes |
 | :--- | ---: | ---: | :--- | :--- |
@@ -98,7 +99,7 @@ Your 39 categories from `Monthly Overview` are preserved intact so your Telegram
 | `Medicinas Mama` | $20 | $5.00 | GIVE | Binance P2P → Mercantil |
 | `Medico` | $50 | $12.50 | NEC | Binance P2P → Mercantil |
 | `Terapia` | $50 | *(Direct)* | NEC/EDUC | **Binance Pay (USDT)** directly |
-| `Subscripciones Internet` | $50 | $12.50 | NEC | Binance P2P → Mercantil |
+| `Subscripciones Internet` | $40 | $10.00 | NEC | Binance P2P → Mercantil |
 | `Subscripciones Joel` | $20 | $5.00 | NEC | Binance P2P → Mercantil |
 | `Condominio Apartamentos` | $20 | $5.00 | NEC | Binance P2P → Mercantil |
 | `Subscripciones Movistar` | $10 | $2.50 | NEC | Binance P2P → Mercantil |
@@ -109,21 +110,23 @@ Your 39 categories from `Monthly Overview` are preserved intact so your Telegram
 | `Comunidad Iglesia` | $40 | $10.00 | GIVE | Binance P2P → Mercantil |
 | `Comunidad NA` | $20 | $5.00 | GIVE | Binance P2P → Mercantil |
 | `Comunidad Running` | $0 | $0.00 | PLAY | Inactive ($0) |
-| `Salidas` | $40 | $10.00 | PLAY | Binance P2P → Mercantil (Guilt-free Play) |
-| **Subtotal Layer 3** | **$900** | **$212.50/wk** *(+$50 Terapia)* | | **Active monthly local flow** |
+| `Salidas` | $65 | $16.25 | PLAY | Binance P2P → Mercantil (Guilt-free Play) |
+| **Subtotal Layer 3** | **$915** | **$216.25/wk** *(+$50 Terapia)* | | **Active monthly local flow** |
 
-### Layer 4: Local Sinking Funds in `Binance Simple Earn (Vault)` ($167/mo)
-*These do **not** get spent every month. They sit in `Binance Simple Earn` and accumulate across months until their batch/irregular expense occurs.*
+### Layer 4: Local Sinking Funds & CapEx in `Binance Simple Earn (Vault)` ($417/mo)
+*These do **not** get spent every week. They sit in `Binance Simple Earn` and accumulate across months until their batch/project/seasonal expense occurs.*
 
 | Category (`Monthly Overview`) | Monthly $ | Eker Jar | Sinking Fund Rule |
 | :--- | ---: | :--- | :--- |
+| `Proyectos casa` | $300 | LTSS/CapEx | **Washer + Dryer + Installation & Home Repairs** (or shifts to Family Visit Buffer in Nov–Jan) |
+| `Imprevistos` | $50 | LTSS/Buffer | **48-Hour Local Emergency Buffer** in Binance Earn (instant USDT liquidity) |
+| `oficina` | $25 | EDUC/Work | Accumulates in Binance Earn ($300/yr) for laptop/tech/workspace needs |
+| `ropa` | $25 | PLAY/LTSS | Accumulates in Binance Earn ($300/yr) for periodic clothing purchases |
 | `Condominio Agua` | $10 | NEC (Sinking) | Accumulates in Binance Earn for **annual fee ($120/yr)** |
 | `Condominio Gas` | $5 | NEC (Sinking) | Accumulates in Binance Earn until **multi-month gas tank refill** |
 | `Condominio Luz` | $2 | NEC (Sinking) | Accumulates in Binance Earn for **multi-month batch payment** |
-| `oficina` | $50 | EDUC/Work | Accumulates in Binance Earn for laptop/tech/workspace needs |
-| `ropa` | $50 | PLAY/LTSS | Accumulates in Binance Earn for periodic clothing purchases |
-| `Imprevistos` | $50 | LTSS/Buffer | **48-Hour Local Emergency Buffer** in Binance Earn (instant USDT liquidity) |
-| **Subtotal Layer 4** | **$167** | | **Locked in `Binance Simple Earn` until needed** |
+| **Subtotal Layer 4** | **$417** | | **Locked in `Binance Simple Earn` until needed** |
+| **GRAND TOTAL (Layers 1–4)** | **$2,000** | | **Exact $2,000.00 Routine Baseline** |
 
 ---
 
